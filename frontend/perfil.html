@@ -1,35 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gerencie seus dados pessoais no MindSafe.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gerencie seus dados pessoais no MindSafe."
+    />
     <title>Meu perfil | MindSafe</title>
-    <link rel="stylesheet" href="auth.css">
-</head>
-<body class="profile-page">
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body class="profile-page">
     <main class="auth-main">
-        <div class="profile-shell">
-            <header class="profile-top"><a class="brand" href="home.html"><span class="brand-mark">M</span><span>mind<strong>safe</strong></span></a><a class="home-link" href="home.html">← Voltar ao início</a></header>
-            <section class="profile-intro"><p class="eyebrow">SEU ESPAÇO PESSOAL</p><h1>Meu perfil</h1><p>Atualize seus dados básicos para deixar sua experiência mais confortável.</p></section>
-            <section class="profile-card">
-                <div class="profile-identity"><div class="profile-avatar" id="profile-avatar">MS</div><div><h2 id="profile-name-heading">Seu perfil</h2><p id="profile-email-heading">Adicione seu e-mail</p></div></div>
-                <form id="profile-form" novalidate>
-                    <h2 class="profile-section-title">Dados pessoais</h2>
-                    <div class="field-grid">
-                        <div class="field full"><label for="profile-name">Nome completo</label><input id="profile-name" type="text" autocomplete="name" required></div>
-                        <div class="field"><label for="profile-email">E-mail</label><input id="profile-email" type="email" autocomplete="email" required></div>
-                        <div class="field"><label for="profile-phone">Telefone</label><input id="profile-phone" type="tel" autocomplete="tel"></div>
-                        <div class="field"><label for="profile-city">Cidade</label><input id="profile-city" type="text" autocomplete="address-level2"></div>
-                        <div class="field"><label for="profile-contact">Forma de contato preferida</label><select id="profile-contact"><option value="email">E-mail</option><option value="telefone">Telefone</option></select></div>
-                    </div>
-                    <div class="profile-actions"><button class="secondary-button" id="logout-button" type="button">Sair da conta</button><button class="primary-button" type="submit">Salvar alterações <span>→</span></button></div>
-                    <p class="form-message" aria-live="polite"></p>
-                </form>
-                <p class="privacy-note">ⓘ Estes campos são apenas dados de identificação e contato. Neste protótipo, as informações ficam salvas localmente no navegador e não são enviadas para um servidor.</p>
-            </section>
-        </div>
+      <div class="profile-shell">
+        <header class="profile-top">
+          <a class="brand" href="home.html"
+            ><span class="brand-mark">M</span
+            ><span>mind<strong>safe</strong></span></a
+          ><a class="home-link" href="home.html">← Voltar ao início</a>
+        </header>
+        <section class="profile-intro">
+          <p class="eyebrow">SEU ESPAÇO PESSOAL</p>
+          <h1>Meu perfil</h1>
+          <p>
+            Atualize seus dados básicos para deixar sua experiência mais
+            confortável.
+          </p>
+        </section>
+        <section class="profile-card">
+          <div class="profile-identity">
+            <div class="profile-avatar" id="profile-avatar">MS</div>
+            <div>
+              <h2 id="profile-name-heading">Seu perfil</h2>
+              <p id="profile-email-heading">Adicione seu e-mail</p>
+            </div>
+          </div>
+          <form id="profile-form" novalidate>
+            <h2 class="profile-section-title">Dados pessoais</h2>
+            <div class="field-grid">
+              <div class="field full">
+                <label for="profile-name">Nome completo</label
+                ><input
+                  id="profile-name"
+                  type="text"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="profile-email">E-mail</label
+                ><input
+                  id="profile-email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="profile-phone">Telefone</label
+                ><input id="profile-phone" type="tel" autocomplete="tel" />
+              </div>
+              <div class="field">
+                <label for="profile-city">Cidade</label
+                ><input
+                  id="profile-city"
+                  type="text"
+                  autocomplete="address-level2"
+                />
+              </div>
+              <div class="field">
+                <label for="profile-contact">Forma de contato preferida</label
+                ><select id="profile-contact">
+                  <option value="email">E-mail</option>
+                  <option value="telefone">Telefone</option>
+                </select>
+              </div>
+            </div>
+            <div class="profile-actions">
+              <button class="secondary-button" id="logout-button" type="button">
+                Sair da conta</button
+              ><button class="primary-button" type="submit">
+                Salvar alterações <span>→</span>
+              </button>
+            </div>
+            <p class="form-message" aria-live="polite"></p>
+          </form>
+          <p class="privacy-note">
+            ⓘ Estes campos são apenas dados de identificação e contato. Neste
+            protótipo, as informações ficam salvas localmente no navegador e não
+            são enviadas para um servidor.
+          </p>
+        </section>
+      </div>
     </main>
     <script src="auth.js"></script>
-</body>
+  </body>
 </html>

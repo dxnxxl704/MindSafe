@@ -1,41 +1,148 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Crie seu cadastro no MindSafe.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Crie seu cadastro no MindSafe." />
     <title>Criar cadastro | MindSafe</title>
-    <link rel="stylesheet" href="auth.css">
-</head>
-<body>
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
     <div class="auth-page">
-        <aside class="auth-aside">
-            <a class="brand" href="home.html"><span class="brand-mark">M</span><span>mind<strong>safe</strong></span></a>
-            <div class="aside-copy"><p class="eyebrow">COMECE PELO AGORA</p><h1>Seu cuidado também merece espaço.</h1><p>Crie seu espaço pessoal para acompanhar emoções, salvar descobertas e encontrar informação confiável.</p></div>
-            <blockquote class="aside-quote">“Cuidar de si não é egoísmo. É presença.”<small>Seu espaço, seu ritmo.</small></blockquote>
-        </aside>
-        <main class="auth-main">
-            <div class="auth-box">
-                <header class="auth-header"><p class="eyebrow">PRIMEIRO PASSO</p><h1>Crie sua conta</h1><p>Usaremos seus dados apenas para personalizar sua experiência.</p></header>
-                <form class="auth-form" id="register-form" novalidate>
-                    <div class="field-grid">
-                        <div class="field full"><label for="register-name">Nome completo</label><input id="register-name" type="text" placeholder="Como você gostaria de ser chamado?" autocomplete="name" required></div>
-                        <div class="field"><label for="register-email">E-mail</label><input id="register-email" type="email" placeholder="voce@exemplo.com" autocomplete="email" required></div>
-                        <div class="field"><label for="register-phone">Telefone <span>(opcional)</span></label><input id="register-phone" type="tel" placeholder="(00) 00000-0000" autocomplete="tel"></div>
-                        <div class="field"><label for="register-city">Cidade <span>(opcional)</span></label><input id="register-city" type="text" placeholder="Sua cidade" autocomplete="address-level2"></div>
-                        <div class="field"><label for="register-contact">Forma de contato</label><select id="register-contact"><option value="email">E-mail</option><option value="telefone">Telefone</option></select></div>
-                        <div class="field"><label for="register-password">Senha</label><div class="password-wrap"><input id="register-password" type="password" placeholder="Mínimo de 6 caracteres" autocomplete="new-password" required><button class="toggle-password" type="button" data-target="register-password" aria-label="Mostrar senha">◌</button></div></div>
-                        <div class="field"><label for="register-password-confirmation">Confirmar senha</label><div class="password-wrap"><input id="register-password-confirmation" type="password" placeholder="Repita sua senha" autocomplete="new-password" required><button class="toggle-password" type="button" data-target="register-password-confirmation" aria-label="Mostrar senha">◌</button></div></div>
-                    </div>
-                    <div class="check-row"><input id="terms" type="checkbox" required><label for="terms">Concordo com os termos de uso e entendo que o MindSafe é uma ferramenta informativa, não um serviço de diagnóstico ou emergência.</label></div>
-                    <button class="primary-button" type="submit">Criar minha conta <span>→</span></button>
-                    <p class="form-message" aria-live="polite"></p>
-                </form>
-                <p class="switch-auth">Já tem uma conta? <a class="auth-link" href="login.html">Entrar</a></p>
-                <a class="back-home" href="home.html">← Voltar para o início</a>
+      <aside class="auth-aside">
+        <a class="brand" href="home.html"
+          ><span class="brand-mark">M</span
+          ><span>mind<strong>safe</strong></span></a
+        >
+        <div class="aside-copy">
+          <p class="eyebrow">COMECE PELO AGORA</p>
+          <h1>Seu cuidado também merece espaço.</h1>
+          <p>
+            Crie seu espaço pessoal para acompanhar emoções, salvar descobertas
+            e encontrar informação confiável.
+          </p>
+        </div>
+        <blockquote class="aside-quote">
+          “Cuidar de si não é egoísmo. É presença.”<small
+            >Seu espaço, seu ritmo.</small
+          >
+        </blockquote>
+      </aside>
+      <main class="auth-main">
+        <div class="auth-box">
+          <header class="auth-header">
+            <p class="eyebrow">PRIMEIRO PASSO</p>
+            <h1>Crie sua conta</h1>
+            <p>Usaremos seus dados apenas para personalizar sua experiência.</p>
+          </header>
+          <form class="auth-form" id="register-form" novalidate>
+            <div class="field-grid">
+              <div class="field full">
+                <label for="register-name">Nome completo</label
+                ><input
+                  id="register-name"
+                  type="text"
+                  placeholder="Como você gostaria de ser chamado?"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="register-email">E-mail</label
+                ><input
+                  id="register-email"
+                  type="email"
+                  placeholder="voce@exemplo.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="register-phone"
+                  >Telefone <span>(opcional)</span></label
+                ><input
+                  id="register-phone"
+                  type="tel"
+                  placeholder="(00) 00000-0000"
+                  autocomplete="tel"
+                />
+              </div>
+              <div class="field">
+                <label for="register-city">Cidade <span>(opcional)</span></label
+                ><input
+                  id="register-city"
+                  type="text"
+                  placeholder="Sua cidade"
+                  autocomplete="address-level2"
+                />
+              </div>
+              <div class="field">
+                <label for="register-contact">Forma de contato</label
+                ><select id="register-contact">
+                  <option value="email">E-mail</option>
+                  <option value="telefone">Telefone</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="register-password">Senha</label>
+                <div class="password-wrap">
+                  <input
+                    id="register-password"
+                    type="password"
+                    placeholder="Mínimo de 6 caracteres"
+                    autocomplete="new-password"
+                    required
+                  /><button
+                    class="toggle-password"
+                    type="button"
+                    data-target="register-password"
+                    aria-label="Mostrar senha"
+                  >
+                    ◌
+                  </button>
+                </div>
+              </div>
+              <div class="field">
+                <label for="register-password-confirmation"
+                  >Confirmar senha</label
+                >
+                <div class="password-wrap">
+                  <input
+                    id="register-password-confirmation"
+                    type="password"
+                    placeholder="Repita sua senha"
+                    autocomplete="new-password"
+                    required
+                  /><button
+                    class="toggle-password"
+                    type="button"
+                    data-target="register-password-confirmation"
+                    aria-label="Mostrar senha"
+                  >
+                    ◌
+                  </button>
+                </div>
+              </div>
             </div>
-        </main>
+            <div class="check-row">
+              <input id="terms" type="checkbox" required /><label for="terms"
+                >Concordo com os termos de uso e entendo que o MindSafe é uma
+                ferramenta informativa, não um serviço de diagnóstico ou
+                emergência.</label
+              >
+            </div>
+            <button class="primary-button" type="submit">
+              Criar minha conta <span>→</span>
+            </button>
+            <p class="form-message" aria-live="polite"></p>
+          </form>
+          <p class="switch-auth">
+            Já tem uma conta? <a class="auth-link" href="login.html">Entrar</a>
+          </p>
+          <a class="back-home" href="home.html">← Voltar para o início</a>
+        </div>
+      </main>
     </div>
     <script src="auth.js"></script>
-</body>
+  </body>
 </html>

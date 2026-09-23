@@ -1,89 +1,532 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MindSafe: informação, acompanhamento e apoio para cuidar da saúde mental.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MindSafe: informação, acompanhamento e apoio para cuidar da saúde mental."
+    />
     <title>MindSafe | Não chegue ao limite</title>
-    <link rel="stylesheet" href="home.css">
-</head>
-<body>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
     <div class="app-shell">
-        <aside class="sidebar" aria-label="Navegação principal">
-            <a class="brand" href="#inicio" data-view-link="inicio" aria-label="MindSafe, início">
-                <span class="brand-mark">M</span>
-                <span><strong>mind</strong>safe</span>
-            </a>
+      <aside class="sidebar" aria-label="Navegação principal">
+        <a
+          class="brand"
+          href="#inicio"
+          data-view-link="inicio"
+          aria-label="MindSafe, início"
+        >
+          <span class="brand-mark">M</span>
+          <span><strong>mind</strong>safe</span>
+        </a>
 
-            <div class="sidebar-label">Seu espaço</div>
-            <nav class="main-nav">
-                <button class="nav-item active" data-view="inicio"><span class="nav-icon">⌂</span> Início</button>
-                <button class="nav-item" data-view="forum"><span class="nav-icon">◫</span> Fórum</button>
-                <button class="nav-item" data-view="glossario"><span class="nav-icon">Aa</span> Glossário</button>
-                <button class="nav-item" data-view="chat"><span class="nav-icon">✦</span> Autoatendimento <span class="nav-status"></span></button>
-            </nav>
+        <div class="sidebar-label">Seu espaço</div>
+        <nav class="main-nav">
+          <button class="nav-item active" data-view="inicio">
+            <span class="nav-icon">⌂</span> Início
+          </button>
+          <button class="nav-item" data-view="forum">
+            <span class="nav-icon">◫</span> Fórum
+          </button>
+          <button class="nav-item" data-view="glossario">
+            <span class="nav-icon">Aa</span> Glossário
+          </button>
+          <button class="nav-item" data-view="chat">
+            <span class="nav-icon">✦</span> Autoatendimento
+            <span class="nav-status"></span>
+          </button>
+        </nav>
 
-            <div class="sidebar-label">Acompanhe-se</div>
-            <nav class="main-nav">
-                <button class="nav-item" data-view="diario"><span class="nav-icon">▣</span> Meu diário</button>
-                <button class="nav-item" data-view="historico"><span class="nav-icon">◷</span> Histórico</button>
-            </nav>
+        <div class="sidebar-label">Acompanhe-se</div>
+        <nav class="main-nav">
+          <button class="nav-item" data-view="diario">
+            <span class="nav-icon">▣</span> Meu diário
+          </button>
+          <button class="nav-item" data-view="historico">
+            <span class="nav-icon">◷</span> Histórico
+          </button>
+        </nav>
 
-            <div class="sidebar-support">
-                <span class="support-icon">♡</span>
-                <strong>Você não precisa passar por isso sozinho.</strong>
-                <p>Encontre informação confiável e dê um primeiro passo no seu ritmo.</p>
-                <button class="text-button" data-view="chat">Conversar agora <span>→</span></button>
+        <div class="sidebar-support">
+          <span class="support-icon">♡</span>
+          <strong>Você não precisa passar por isso sozinho.</strong>
+          <p>
+            Encontre informação confiável e dê um primeiro passo no seu ritmo.
+          </p>
+          <button class="text-button" data-view="chat">
+            Conversar agora <span>→</span>
+          </button>
+        </div>
+
+        <div class="sidebar-footer">
+          <button class="nav-item">
+            <span class="nav-icon">?</span> Ajuda e segurança
+          </button>
+          <a class="user-mini" href="perfil.html"
+            ><span class="avatar">JS</span
+            ><span><strong>João Silva</strong><small>Meu perfil</small></span
+            ><span class="more">•••</span></a
+          >
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="mobile-brand">
+            <span class="brand-mark">M</span><strong>mindsafe</strong>
+          </div>
+          <label class="search-box" for="global-search"
+            ><span>⌕</span
+            ><input
+              id="global-search"
+              type="search"
+              placeholder="Busque por um tema, termo ou artigo..."
+              autocomplete="off"
+            /><kbd>⌘ K</kbd></label
+          >
+          <div class="top-actions">
+            <button class="icon-button" aria-label="Notificações">
+              ♧<span class="notification-dot"></span></button
+            ><button class="icon-button" aria-label="Configurações">⚙</button>
+          </div>
+        </header>
+
+        <div class="page-wrap">
+          <section
+            id="view-inicio"
+            class="view active-view"
+            aria-labelledby="welcome-title"
+          >
+            <div class="welcome-row">
+              <div>
+                <p class="eyebrow">QUARTA-FEIRA, 23 DE SETEMBRO</p>
+                <h1 id="welcome-title">
+                  Bom te ver por aqui, João<span class="soft-dot">!</span>
+                </h1>
+                <p class="intro">
+                  Cuidar da mente não precisa esperar chegar ao limite.
+                </p>
+              </div>
+              <button class="date-button">Hoje <span>⌄</span></button>
             </div>
 
-            <div class="sidebar-footer">
-                <button class="nav-item"><span class="nav-icon">?</span> Ajuda e segurança</button>
-                <a class="user-mini" href="perfil.html"><span class="avatar">JS</span><span><strong>João Silva</strong><small>Meu perfil</small></span><span class="more">•••</span></a>
+            <div class="hero-panel">
+              <div class="hero-copy">
+                <span class="pill light-pill">COMECE PELO AGORA</span>
+                <h2>Como você está se sentindo hoje?</h2>
+                <p>
+                  Um check-in rápido pode ajudar você a perceber o que está
+                  acontecendo por dentro.
+                </p>
+                <button class="primary-button" data-view="diario">
+                  Fazer check-in <span>→</span>
+                </button>
+              </div>
+              <div class="mood-orbit" aria-hidden="true">
+                <span class="orbit-ring ring-one"></span
+                ><span class="orbit-ring ring-two"></span
+                ><span class="mood-face">◡</span
+                ><span class="orbit-star star-one">✦</span
+                ><span class="orbit-star star-two">·</span>
+              </div>
             </div>
-        </aside>
 
-        <main class="main-content">
-            <header class="topbar">
-                <div class="mobile-brand"><span class="brand-mark">M</span><strong>mindsafe</strong></div>
-                <label class="search-box" for="global-search"><span>⌕</span><input id="global-search" type="search" placeholder="Busque por um tema, termo ou artigo..." autocomplete="off"><kbd>⌘ K</kbd></label>
-                <div class="top-actions"><button class="icon-button" aria-label="Notificações">♧<span class="notification-dot"></span></button><button class="icon-button" aria-label="Configurações">⚙</button></div>
-            </header>
-
-            <div class="page-wrap">
-                <section id="view-inicio" class="view active-view" aria-labelledby="welcome-title">
-                    <div class="welcome-row">
-                        <div><p class="eyebrow">QUARTA-FEIRA, 23 DE SETEMBRO</p><h1 id="welcome-title">Bom te ver por aqui, João<span class="soft-dot">.</span></h1><p class="intro">Cuidar da mente não precisa esperar chegar ao limite.</p></div>
-                        <button class="date-button">Hoje <span>⌄</span></button>
-                    </div>
-
-                    <div class="hero-panel">
-                        <div class="hero-copy"><span class="pill light-pill">COMECE PELO AGORA</span><h2>Como você está se sentindo hoje?</h2><p>Um check-in rápido pode ajudar você a perceber o que está acontecendo por dentro.</p><button class="primary-button" data-view="diario">Fazer check-in <span>→</span></button></div>
-                        <div class="mood-orbit" aria-hidden="true"><span class="orbit-ring ring-one"></span><span class="orbit-ring ring-two"></span><span class="mood-face">◡</span><span class="orbit-star star-one">✦</span><span class="orbit-star star-two">·</span></div>
-                    </div>
-
-                    <div class="section-heading"><div><p class="eyebrow">PARA VOCÊ</p><h2>Explore com calma</h2></div><button class="link-button" data-view="forum">Ver tudo <span>→</span></button></div>
-                    <div class="feature-grid">
-                        <article class="feature-card feature-article" data-view="forum"><div class="card-top"><span class="category-tag">ARTIGO EM DESTAQUE</span><span>↗</span></div><h3>Quando a mente pede uma pausa</h3><p>Entenda por que descansar também é uma forma de cuidado.</p><div class="card-meta"><span>6 min de leitura</span><span>Saúde emocional</span></div></article>
-                        <article class="feature-card feature-glossary" data-view="glossario"><div class="card-top"><span class="category-tag">GLOSSÁRIO</span><span>↗</span></div><h3>Ansiedade não é<br>frescura.</h3><p>Informação clara para compreender o que você sente.</p><button class="round-arrow">→</button></article>
-                        <article class="feature-card feature-chat" data-view="chat"><div class="card-top"><span class="category-tag">AUTOATENDIMENTO</span><span>✦</span></div><h3>Tem uma dúvida?</h3><p>Converse com o assistente e encontre caminhos seguros.</p><div class="chat-preview"><span class="assistant-avatar">M</span><span>Olá, como posso ajudar?</span><span>→</span></div></article>
-                    </div>
-
-                    <div class="lower-grid"><section class="panel checkin-panel"><div class="section-heading compact"><div><p class="eyebrow">SEU MOMENTO</p><h2>Como foi seu dia?</h2></div><span class="date-small">23 set</span></div><p>Registre uma palavra para começar a acompanhar seu estado emocional.</p><div class="mood-options"><button data-mood="Muito difícil"><span>☹</span><small>Muito difícil</small></button><button data-mood="Difícil"><span>◔</span><small>Difícil</small></button><button data-mood="Neutro"><span>—</span><small>Neutro</small></button><button data-mood="Bem"><span>◡</span><small>Bem</small></button><button data-mood="Muito bem"><span>☺</span><small>Muito bem</small></button></div><p class="saved-mood" aria-live="polite"></p></section><section class="panel recent-panel"><div class="section-heading compact"><div><p class="eyebrow">CONTINUE DE ONDE PAROU</p><h2>Seus registros</h2></div><button class="link-button" data-view="historico">Ver histórico <span>→</span></button></div><div class="record-row"><span class="record-icon blue">☰</span><span><strong>O que tem ocupado sua cabeça?</strong><small>Diário emocional · há 2 dias</small></span><span class="record-arrow">→</span></div><div class="record-row"><span class="record-icon yellow">◡</span><span><strong>Check-in de 21 de setembro</strong><small>Você registrou: Bem</small></span><span class="record-arrow">→</span></div></section></div>
-                </section>
-
-                <section id="view-forum" class="view" aria-labelledby="forum-title"><div class="view-header"><div><p class="eyebrow">INFORMAÇÃO CONFIÁVEL</p><h1 id="forum-title">Fórum</h1><p>Artigos e estudos para entender melhor sua saúde mental.</p></div><button class="outline-button">＋ Sugerir tema</button></div><div class="tab-row"><button class="tab active" data-forum-filter="todos">Todos</button><button class="tab" data-forum-filter="artigos">Artigos</button><button class="tab" data-forum-filter="estudos">Estudos científicos</button><button class="tab" data-forum-filter="salvos">Salvos</button></div><div class="forum-layout"><div class="article-list" id="article-list"></div><aside class="reading-side"><div class="panel newsletter"><span class="mini-kicker">PARA LER COM CALMA</span><h3>Uma pequena pausa pode mudar o seu dia.</h3><p>Receba uma seleção quinzenal de conteúdos do MindSafe.</p><label class="email-input"><input type="email" placeholder="Seu melhor e-mail"><button aria-label="Assinar newsletter">→</button></label><small>Sem spam. Você pode sair quando quiser.</small></div><div class="panel topics-panel"><p class="eyebrow">TEMAS POPULARES</p><div class="topic-cloud"><button>Ansiedade</button><button>Autocuidado</button><button>Estresse</button><button>Relacionamentos</button><button>Sono</button><button>Autoestima</button></div></div></aside></div></section>
-
-                <section id="view-glossario" class="view" aria-labelledby="glossary-title"><div class="view-header"><div><p class="eyebrow">ENTENDA OS TERMOS</p><h1 id="glossary-title">Glossário</h1><p>Definições simples, cuidadosas e baseadas em fontes confiáveis.</p></div><span class="glossary-count">6 termos demonstrativos</span></div><div class="glossary-toolbar"><label class="inner-search"><span>⌕</span><input id="glossary-search" type="search" placeholder="Pesquisar síndrome, transtorno ou condição..."></label><div class="filter-chips"><button class="chip active" data-glossary-filter="todos">Todos</button><button class="chip" data-glossary-filter="emoções">Emoções</button><button class="chip" data-glossary-filter="transtornos">Transtornos</button><button class="chip" data-glossary-filter="condições">Condições</button></div></div><div class="glossary-grid" id="glossary-grid"></div><div class="glossary-note"><span>ⓘ</span><p>As definições são educativas e não substituem avaliação profissional. Cada pessoa pode vivenciar uma condição de maneira diferente.</p></div></section>
-
-                <section id="view-chat" class="view" aria-labelledby="chat-title"><div class="view-header chat-heading"><div><p class="eyebrow">ESCUTA E INFORMAÇÃO</p><h1 id="chat-title">Autoatendimento</h1><p>Um espaço para tirar dúvidas e encontrar próximos passos.</p></div><span class="online-badge"><i></i> Assistente online</span></div><div class="chat-layout"><div class="chat-window panel"><div class="chat-window-head"><div class="assistant-avatar large">M</div><div><strong>Mind, assistente MindSafe</strong><small>Informação segura para começar</small></div><span class="privacy-label">🔒 Privado</span></div><div class="messages" id="messages"><div class="message assistant-message"><span class="message-avatar">M</span><div><p>Olá, João. Eu estou aqui para ajudar você a entender melhor temas de saúde mental.</p><p>Você pode perguntar sobre um termo do glossário, um artigo ou contar como está se sentindo.</p><span class="message-time">agora</span></div></div><div class="suggestion-row"><button data-suggestion="O que é ansiedade?">O que é ansiedade?</button><button data-suggestion="Como posso cuidar melhor de mim?">Como cuidar melhor de mim?</button><button data-suggestion="Quero encontrar um artigo">Encontrar um artigo</button></div></div><form class="chat-composer" id="chat-form"><input id="chat-input" type="text" placeholder="Escreva sua dúvida..." autocomplete="off"><button type="submit" aria-label="Enviar mensagem">↑</button></form><p class="chat-disclaimer">O Mind não diagnostica nem substitui profissionais. Em uma emergência, ligue <strong>192</strong> ou procure um serviço de urgência.</p></div><aside class="chat-aside"><div class="panel safety-card"><span class="safety-icon">♡</span><h3>Precisa de ajuda agora?</h3><p>Se você estiver em risco ou pensando em se machucar, procure ajuda imediata.</p><a href="tel:188">CVV 188 <span>↗</span></a><small>Atendimento gratuito, 24 horas.</small></div><div class="panel chat-topics"><p class="eyebrow">VOCÊ TAMBÉM PODE</p><button data-view="glossario">Explorar o glossário <span>→</span></button><button data-view="forum">Ler artigos e estudos <span>→</span></button></div></aside></div></section>
-
-                <section id="view-diario" class="view" aria-labelledby="diary-title"><div class="view-header"><div><p class="eyebrow">ACOMPANHAMENTO PESSOAL</p><h1 id="diary-title">Meu diário</h1><p>Coloque em palavras o que está passando pela sua cabeça.</p></div></div><div class="diary-layout"><div class="panel diary-editor"><label for="diary-text">O que você gostaria de registrar hoje?</label><textarea id="diary-text" placeholder="Escreva livremente. Este espaço é só seu..."></textarea><div class="editor-footer"><span>Seus registros são privados</span><button class="primary-button" id="save-diary">Salvar registro <span>→</span></button></div><p class="saved-mood" id="diary-status" aria-live="polite"></p></div><div class="panel prompt-card"><span class="prompt-symbol">✦</span><p class="eyebrow">UMA PERGUNTA PARA HOJE</p><h3>O que você tem precisado, mas ainda não conseguiu pedir?</h3><button class="link-button" id="use-prompt">Usar como inspiração <span>→</span></button></div></div></section>
-
-                <section id="view-historico" class="view" aria-labelledby="history-title"><div class="view-header"><div><p class="eyebrow">SEU CAMINHO</p><h1 id="history-title">Histórico</h1><p>Perceber padrões também é uma forma de cuidado.</p></div><button class="outline-button">Exportar dados</button></div><div class="history-summary"><div class="panel summary-card"><span class="summary-icon blue">◡</span><strong>12</strong><small>check-ins registrados</small></div><div class="panel summary-card"><span class="summary-icon yellow">▤</span><strong>4</strong><small>entradas no diário</small></div><div class="panel summary-card"><span class="summary-icon green">↗</span><strong>3</strong><small>semanas acompanhando</small></div></div><div class="panel timeline"><div class="section-heading compact"><div><p class="eyebrow">SETEMBRO DE 2026</p><h2>Seus registros recentes</h2></div></div><div class="timeline-item"><span class="timeline-dot green-dot"></span><div><strong>Bem</strong><p>Check-in emocional</p></div><time>Hoje, 09:12</time></div><div class="timeline-item"><span class="timeline-dot blue-dot"></span><div><strong>O que tem ocupado sua cabeça?</strong><p>Entrada no diário</p></div><time>21 set, 19:40</time></div><div class="timeline-item"><span class="timeline-dot yellow-dot"></span><div><strong>Neutro</strong><p>Check-in emocional</p></div><time>21 set, 08:20</time></div></div></section>
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">PARA VOCÊ</p>
+                <h2>Explore com calma</h2>
+              </div>
+              <button class="link-button" data-view="forum">
+                Ver tudo <span>→</span>
+              </button>
             </div>
-        </main>
+            <div class="feature-grid">
+              <article class="feature-card feature-article" data-view="forum">
+                <div class="card-top">
+                  <span class="category-tag">ARTIGO EM DESTAQUE</span
+                  ><span>↗</span>
+                </div>
+                <h3>Quando a mente pede uma pausa</h3>
+                <p>Entenda por que descansar também é uma forma de cuidado.</p>
+                <div class="card-meta">
+                  <span>6 min de leitura</span><span>Saúde emocional</span>
+                </div>
+              </article>
+              <article
+                class="feature-card feature-glossary"
+                data-view="glossario"
+              >
+                <div class="card-top">
+                  <span class="category-tag">GLOSSÁRIO</span><span>↗</span>
+                </div>
+                <h3>Ansiedade não é<br />frescura.</h3>
+                <p>Informação clara para compreender o que você sente.</p>
+                <button class="round-arrow">→</button>
+              </article>
+              <article class="feature-card feature-chat" data-view="chat">
+                <div class="card-top">
+                  <span class="category-tag">AUTOATENDIMENTO</span
+                  ><span>✦</span>
+                </div>
+                <h3>Tem uma dúvida?</h3>
+                <p>Converse com o assistente e encontre caminhos seguros.</p>
+                <div class="chat-preview">
+                  <span class="assistant-avatar">M</span
+                  ><span>Olá, como posso ajudar?</span><span>→</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="lower-grid">
+              <section class="panel checkin-panel">
+                <div class="section-heading compact">
+                  <div>
+                    <p class="eyebrow">SEU MOMENTO</p>
+                    <h2>Como foi seu dia?</h2>
+                  </div>
+                  <span class="date-small">23 set</span>
+                </div>
+                <p>
+                  Registre uma palavra para começar a acompanhar seu estado
+                  emocional.
+                </p>
+                <div class="mood-options">
+                  <button data-mood="Muito difícil">
+                    <span>☹</span><small>Muito difícil</small></button
+                  ><button data-mood="Difícil">
+                    <span>◔</span><small>Difícil</small></button
+                  ><button data-mood="Neutro">
+                    <span>—</span><small>Neutro</small></button
+                  ><button data-mood="Bem">
+                    <span>◡</span><small>Bem</small></button
+                  ><button data-mood="Muito bem">
+                    <span>☺</span><small>Muito bem</small>
+                  </button>
+                </div>
+                <p class="saved-mood" aria-live="polite"></p>
+              </section>
+              <section class="panel recent-panel">
+                <div class="section-heading compact">
+                  <div>
+                    <p class="eyebrow">CONTINUE DE ONDE PAROU</p>
+                    <h2>Seus registros</h2>
+                  </div>
+                  <button class="link-button" data-view="historico">
+                    Ver histórico <span>→</span>
+                  </button>
+                </div>
+                <div class="record-row">
+                  <span class="record-icon blue">☰</span
+                  ><span
+                    ><strong>O que tem ocupado sua cabeça?</strong
+                    ><small>Diário emocional · há 2 dias</small></span
+                  ><span class="record-arrow">→</span>
+                </div>
+                <div class="record-row">
+                  <span class="record-icon yellow">◡</span
+                  ><span
+                    ><strong>Check-in de 21 de setembro</strong
+                    ><small>Você registrou: Bem</small></span
+                  ><span class="record-arrow">→</span>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <section id="view-forum" class="view" aria-labelledby="forum-title">
+            <div class="view-header">
+              <div>
+                <p class="eyebrow">INFORMAÇÃO CONFIÁVEL</p>
+                <h1 id="forum-title">Fórum</h1>
+                <p>Artigos e estudos para entender melhor sua saúde mental.</p>
+              </div>
+              <button class="outline-button">＋ Sugerir tema</button>
+            </div>
+            <div class="tab-row">
+              <button class="tab active" data-forum-filter="todos">Todos</button
+              ><button class="tab" data-forum-filter="artigos">Artigos</button
+              ><button class="tab" data-forum-filter="estudos">
+                Estudos científicos</button
+              ><button class="tab" data-forum-filter="salvos">Salvos</button>
+            </div>
+            <div class="forum-layout">
+              <div class="article-list" id="article-list"></div>
+              <aside class="reading-side">
+                <div class="panel newsletter">
+                  <span class="mini-kicker">PARA LER COM CALMA</span>
+                  <h3>Uma pequena pausa pode mudar o seu dia.</h3>
+                  <p>Receba uma seleção quinzenal de conteúdos do MindSafe.</p>
+                  <label class="email-input"
+                    ><input
+                      type="email"
+                      placeholder="Seu melhor e-mail"
+                    /><button aria-label="Assinar newsletter">→</button></label
+                  ><small>Sem spam. Você pode sair quando quiser.</small>
+                </div>
+                <div class="panel topics-panel">
+                  <p class="eyebrow">TEMAS POPULARES</p>
+                  <div class="topic-cloud">
+                    <button>Ansiedade</button><button>Autocuidado</button
+                    ><button>Estresse</button><button>Relacionamentos</button
+                    ><button>Sono</button><button>Autoestima</button>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </section>
+
+          <section
+            id="view-glossario"
+            class="view"
+            aria-labelledby="glossary-title"
+          >
+            <div class="view-header">
+              <div>
+                <p class="eyebrow">ENTENDA OS TERMOS</p>
+                <h1 id="glossary-title">Glossário</h1>
+                <p>
+                  Definições simples, cuidadosas e baseadas em fontes
+                  confiáveis.
+                </p>
+              </div>
+              <span class="glossary-count">6 termos demonstrativos</span>
+            </div>
+            <div class="glossary-toolbar">
+              <label class="inner-search"
+                ><span>⌕</span
+                ><input
+                  id="glossary-search"
+                  type="search"
+                  placeholder="Pesquisar síndrome, transtorno ou condição..."
+              /></label>
+              <div class="filter-chips">
+                <button class="chip active" data-glossary-filter="todos">
+                  Todos</button
+                ><button class="chip" data-glossary-filter="emoções">
+                  Emoções</button
+                ><button class="chip" data-glossary-filter="transtornos">
+                  Transtornos</button
+                ><button class="chip" data-glossary-filter="condições">
+                  Condições
+                </button>
+              </div>
+            </div>
+            <div
+              class="glossary-detail"
+              id="glossary-detail"
+              hidden
+              aria-live="polite"
+            ></div>
+            <div class="glossary-grid" id="glossary-grid"></div>
+            <div class="glossary-note">
+              <span>ⓘ</span>
+              <p>
+                As definições são educativas e não substituem avaliação
+                profissional. Cada pessoa pode vivenciar uma condição de maneira
+                diferente.
+              </p>
+            </div>
+          </section>
+
+          <section id="view-chat" class="view" aria-labelledby="chat-title">
+            <div class="view-header chat-heading">
+              <div>
+                <p class="eyebrow">ESCUTA E INFORMAÇÃO</p>
+                <h1 id="chat-title">Autoatendimento</h1>
+                <p>Um espaço para tirar dúvidas e encontrar próximos passos.</p>
+              </div>
+              <span class="online-badge"><i></i> Assistente online</span>
+            </div>
+            <div class="chat-layout">
+              <div class="chat-window panel">
+                <div class="chat-window-head">
+                  <div class="assistant-avatar large">M</div>
+                  <div>
+                    <strong>Mind, assistente MindSafe</strong
+                    ><small>Informação segura para começar</small>
+                  </div>
+                  <span class="privacy-label">🔒 Privado</span>
+                </div>
+                <div class="messages" id="messages">
+                  <div class="message assistant-message">
+                    <span class="message-avatar">M</span>
+                    <div>
+                      <p>
+                        Olá, João. Eu estou aqui para ajudar você a entender
+                        melhor temas de saúde mental.
+                      </p>
+                      <p>
+                        Você pode perguntar sobre um termo do glossário, um
+                        artigo ou contar como está se sentindo.
+                      </p>
+                      <span class="message-time">agora</span>
+                    </div>
+                  </div>
+                  <div class="suggestion-row">
+                    <button data-suggestion="O que é ansiedade?">
+                      O que é ansiedade?</button
+                    ><button data-suggestion="Como posso cuidar melhor de mim?">
+                      Como cuidar melhor de mim?</button
+                    ><button data-suggestion="Quero encontrar um artigo">
+                      Encontrar um artigo</button
+                    ><button data-suggestion="Estou com muito estresse">
+                      Estou com muito estresse</button
+                    ><button data-suggestion="O que é depressão?">
+                      O que é depressão?</button
+                    ><button
+                      data-suggestion="Preciso saber se estou com burnout"
+                    >
+                      Preciso saber se estou com burnout</button
+                    ><button data-suggestion="Como melhorar o sono?">
+                      Como melhorar o sono?</button
+                    ><button data-suggestion="Preciso de ajuda profissional">
+                      Preciso de ajuda profissional
+                    </button>
+                  </div>
+                </div>
+                <form class="chat-composer" id="chat-form">
+                  <input
+                    id="chat-input"
+                    type="text"
+                    placeholder="Escreva sua dúvida..."
+                    autocomplete="off"
+                  /><button type="submit" aria-label="Enviar mensagem">
+                    ↑
+                  </button>
+                </form>
+                <p class="chat-disclaimer">
+                  O Mind não diagnostica nem substitui profissionais. Em uma
+                  emergência, ligue <strong>192</strong> ou procure um serviço
+                  de urgência.
+                </p>
+              </div>
+              <aside class="chat-aside">
+                <div class="panel safety-card">
+                  <span class="safety-icon">♡</span>
+                  <h3>Precisa de ajuda agora?</h3>
+                  <p>
+                    Se você estiver em risco ou pensando em se machucar, procure
+                    ajuda imediata.
+                  </p>
+                  <a href="tel:188">CVV 188 <span>↗</span></a
+                  ><small>Atendimento gratuito, 24 horas.</small>
+                </div>
+                <div class="panel chat-topics">
+                  <p class="eyebrow">VOCÊ TAMBÉM PODE</p>
+                  <button data-view="glossario">
+                    Explorar o glossário <span>→</span></button
+                  ><button data-view="forum">
+                    Ler artigos e estudos <span>→</span>
+                  </button>
+                </div>
+              </aside>
+            </div>
+          </section>
+
+          <section id="view-diario" class="view" aria-labelledby="diary-title">
+            <div class="view-header">
+              <div>
+                <p class="eyebrow">ACOMPANHAMENTO PESSOAL</p>
+                <h1 id="diary-title">Meu diário</h1>
+                <p>Coloque em palavras o que está passando pela sua cabeça.</p>
+              </div>
+            </div>
+            <div class="diary-layout">
+              <div class="panel diary-editor">
+                <label for="diary-text"
+                  >O que você gostaria de registrar hoje?</label
+                ><textarea
+                  id="diary-text"
+                  placeholder="Escreva livremente. Este espaço é só seu..."
+                ></textarea>
+                <div class="editor-footer">
+                  <span>Seus registros são privados</span
+                  ><button class="primary-button" id="save-diary">
+                    Salvar registro <span>→</span>
+                  </button>
+                </div>
+                <p class="saved-mood" id="diary-status" aria-live="polite"></p>
+              </div>
+              <div class="panel prompt-card">
+                <span class="prompt-symbol">✦</span>
+                <p class="eyebrow">UMA PERGUNTA PARA HOJE</p>
+                <h3>
+                  O que você tem precisado, mas ainda não conseguiu pedir?
+                </h3>
+                <button class="link-button" id="use-prompt">
+                  Usar como inspiração <span>→</span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section
+            id="view-historico"
+            class="view"
+            aria-labelledby="history-title"
+          >
+            <div class="view-header">
+              <div>
+                <p class="eyebrow">SEU CAMINHO</p>
+                <h1 id="history-title">Histórico</h1>
+                <p>Perceber padrões também é uma forma de cuidado.</p>
+              </div>
+              <button class="outline-button">Exportar dados</button>
+            </div>
+            <div class="history-summary">
+              <div class="panel summary-card">
+                <span class="summary-icon blue">◡</span><strong>12</strong
+                ><small>check-ins registrados</small>
+              </div>
+              <div class="panel summary-card">
+                <span class="summary-icon yellow">▤</span><strong>4</strong
+                ><small>entradas no diário</small>
+              </div>
+              <div class="panel summary-card">
+                <span class="summary-icon green">↗</span><strong>3</strong
+                ><small>semanas acompanhando</small>
+              </div>
+            </div>
+            <div class="panel timeline">
+              <div class="section-heading compact">
+                <div>
+                  <p class="eyebrow">SETEMBRO DE 2026</p>
+                  <h2>Seus registros recentes</h2>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot green-dot"></span>
+                <div>
+                  <strong>Bem</strong>
+                  <p>Check-in emocional</p>
+                </div>
+                <time>Hoje, 09:12</time>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot blue-dot"></span>
+                <div>
+                  <strong>O que tem ocupado sua cabeça?</strong>
+                  <p>Entrada no diário</p>
+                </div>
+                <time>21 set, 19:40</time>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-dot yellow-dot"></span>
+                <div>
+                  <strong>Neutro</strong>
+                  <p>Check-in emocional</p>
+                </div>
+                <time>21 set, 08:20</time>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
     </div>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
