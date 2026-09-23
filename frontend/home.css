@@ -194,6 +194,8 @@ button {
 .user-mini strong,
 .user-mini small {
   display: block;
+  text-decoration: none;
+  color: var(--ink);
 }
 
 .user-mini small {

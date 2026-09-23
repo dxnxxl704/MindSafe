@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acesse sua conta MindSafe.">
+    <title>Entrar | MindSafe</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="auth-page">
+        <aside class="auth-aside">
+            <a class="brand" href="home.html"><span class="brand-mark">M</span><span>mind<strong>safe</strong></span></a>
+            <div class="aside-copy"><p class="eyebrow">SEU ESPAÇO DE CUIDADO</p><h1>Um passo de cada vez.</h1><p>Informação, reflexão e apoio para você cuidar da mente no seu ritmo.</p></div>
+            <blockquote class="aside-quote">“Não espere chegar ao limite para começar a cuidar de você.”<small>MindSafe</small></blockquote>
+        </aside>
+        <main class="auth-main">
+            <div class="auth-box">
+                <header class="auth-header"><p class="eyebrow">BEM-VINDO DE VOLTA</p><h1>Entrar na sua conta</h1><p>Continue acompanhando o que importa para você.</p></header>
+                <form class="auth-form" id="login-form" novalidate>
+                    <div class="field"><label for="login-email">E-mail</label><input id="login-email" name="email" type="email" placeholder="voce@exemplo.com" autocomplete="email" required></div>
+                    <div class="field"><label for="login-password">Senha</label><div class="password-wrap"><input id="login-password" name="password" type="password" placeholder="Digite sua senha" autocomplete="current-password" required><button class="toggle-password" type="button" data-target="login-password" aria-label="Mostrar senha">◌</button></div></div>
+                    <div class="check-row"><input id="remember-me" type="checkbox"><label for="remember-me">Lembrar de mim neste dispositivo</label><a class="auth-link" href="#recuperar">Esqueci minha senha</a></div>
+                    <button class="primary-button" type="submit">Entrar <span>→</span></button>
+                    <p class="form-message" aria-live="polite"></p>
+                </form>
+                <p class="switch-auth">Ainda não tem uma conta? <a class="auth-link" href="cadastro.html">Criar cadastro</a></p>
+                <a class="back-home" href="home.html">← Voltar para o início</a>
+            </div>
+        </main>
+    </div>
+    <script src="auth.js"></script>
+</body>
+</html>
