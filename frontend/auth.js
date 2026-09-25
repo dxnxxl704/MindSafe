@@ -144,7 +144,24 @@ function setupProfile() {
   });
   document.querySelector("#logout-button").addEventListener("click", () => {
     localStorage.removeItem(USER_STORAGE_KEY);
-    window.location.href = "login.html";
+    window.location.href = "index.html";
+  });
+}
+
+function setupSupport() {
+  const form = document.querySelector("#support-form");
+  if (!form) return;
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const message = document.querySelector(".support-form-message");
+    if (!validateRequiredFields(form)) {
+      message.textContent = "Escolha um assunto e escreva sua mensagem.";
+      message.classList.add("error");
+      return;
+    }
+    message.textContent = "Mensagem registrada neste protótipo. Obrigado pelo contato.";
+    message.classList.remove("error");
+    form.reset();
   });
 }
 
@@ -152,3 +169,4 @@ setupPasswordToggles();
 setupLogin();
 setupRegistration();
 setupProfile();
+setupSupport();

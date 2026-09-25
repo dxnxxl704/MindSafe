@@ -263,15 +263,6 @@ button {
   margin: 23px 0 0;
   font-size: 12px;
 }
-.back-home {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  color: #82918d;
-  text-decoration: none;
-  font-size: 12px;
-  margin-top: 25px;
-}
 .profile-page .auth-main {
   display: block;
 }
@@ -376,7 +367,118 @@ button {
   font-size: 11px;
   line-height: 1.5;
 }
-+ @media (max-width: 780px) {
+.support-card {
+  margin-top: 24px;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+.support-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+.support-heading h2,
+.support-faq h3,
+.support-form h3 {
+  margin: 8px 0;
+  font: 700 18px Manrope;
+}
+.support-heading > div > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.support-badge {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--mint);
+  color: var(--deep-green);
+  font: 700 18px Manrope;
+}
+.support-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  padding-top: 24px;
+}
+.support-faq h3,
+.support-form h3 {
+  margin-top: 0;
+  font-size: 15px;
+}
+.support-faq details {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+}
+.support-faq summary {
+  cursor: pointer;
+  color: #4e6661;
+  font-size: 13px;
+  font-weight: 700;
+}
+.support-faq details p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.support-form .field {
+  margin-bottom: 13px;
+}
+.support-form .primary-button {
+  margin-top: 2px;
+}
+.support-form-message {
+  min-height: 17px;
+  margin: 10px 0 0;
+  color: var(--green);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.support-form-message.error {
+  color: #a45b4c;
+}
+.legal-dialog {
+  width: min(92vw, 560px);
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--ink);
+  box-shadow: 0 20px 70px rgba(29, 66, 60, 0.22);
+}
+.legal-dialog::backdrop {
+  background: rgba(22, 45, 54, 0.38);
+}
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+}
+.dialog-header h2 {
+  margin: 8px 0 18px;
+  font: 700 22px Manrope;
+}
+.legal-dialog p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+.dialog-close {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 26px;
+  line-height: 1;
+}
+@media (max-width: 780px) {
   .auth-page {
     grid-template-columns: 1fr;
   }
@@ -400,7 +502,7 @@ button {
     padding: 25px 5%;
   }
 }
-+ @media (max-width: 480px) {
+@media (max-width: 480px) {
   .auth-form,
   .profile-card {
     padding: 20px;
@@ -428,5 +530,12 @@ button {
   }
   .profile-actions button {
     width: 100%;
+  }
+  .support-card {
+    padding: 20px;
+  }
+  .support-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
 }

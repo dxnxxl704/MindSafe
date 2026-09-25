@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap");
+
+:root {
+  --ink: #162d36;
+  --muted: #73838a;
+  --line: #e2ebe6;
+  --paper: #f7faf8;
+  --white: #fff;
+  --green: #377b62;
+  --deep-green: #1e5144;
+  --mint: #dff3e8;
+  --shadow: 0 18px 55px rgba(29, 66, 60, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background: var(--paper);
+  font: 14px "DM Sans", sans-serif;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.legal-main {
+  width: min(100% - 40px, 880px);
+  margin: 0 auto;
+  padding: 38px 0 60px;
+}
+
+.legal-top,
+.legal-actions,
+.legal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--deep-green);
+  text-decoration: none;
+  font: 800 20px Manrope, sans-serif;
+  letter-spacing: -0.6px;
+}
+
+.brand-mark {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px 9px 9px 2px;
+  background: var(--deep-green);
+  color: var(--white);
+  font: 800 16px Manrope, sans-serif;
+}
+
+.text-link,
+.legal-footer a {
+  color: var(--green);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.legal-document {
+  margin-top: 45px;
+  padding: clamp(25px, 5vw, 52px);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.eyebrow {
+  margin: 0;
+  color: #8b9e98;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.legal-document h1 {
+  margin: 10px 0 12px;
+  font: 800 clamp(28px, 5vw, 42px)/1.1 Manrope, sans-serif;
+  letter-spacing: -1.5px;
+}
+
+.legal-intro,
+.legal-document p,
+.legal-document li {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.legal-intro {
+  max-width: 650px;
+  margin: 0;
+  font-size: 15px;
+}
+
+.legal-meta {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  background: var(--mint);
+  color: var(--deep-green);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.legal-document hr {
+  margin: 30px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.legal-document h2 {
+  margin: 28px 0 8px;
+  color: var(--ink);
+  font: 700 18px Manrope, sans-serif;
+}
+
+.legal-document ul {
+  padding-left: 22px;
+}
+
+.legal-actions {
+  margin-top: 28px;
+  justify-content: flex-start;
+}
+
+.action-button {
+  border: 1px solid #cbdcd3;
+  border-radius: 6px;
+  padding: 11px 15px;
+  background: var(--white);
+  color: var(--green);
+  font-weight: 700;
+}
+
+.action-button:hover {
+  background: #f0f7f2;
+}
+
+.legal-footer {
+  margin-top: 25px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 520px) {
+  .legal-main {
+    width: min(100% - 28px, 880px);
+    padding-top: 24px;
+  }
+
+  .legal-top .text-link {
+    font-size: 0;
+  }
+
+  .legal-top .text-link::before {
+    content: "←";
+    font-size: 20px;
+  }
+
+  .legal-document {
+    margin-top: 30px;
+    padding: 24px 20px;
+  }
+
+  .legal-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

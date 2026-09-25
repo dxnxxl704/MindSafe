@@ -91,6 +91,51 @@
             são enviadas para um servidor.
           </p>
         </section>
+        <section class="support-card" aria-labelledby="support-title">
+          <div class="support-heading">
+            <div>
+              <p class="eyebrow">ESTAMOS COM VOCÊ</p>
+              <h2 id="support-title">Ajuda e suporte</h2>
+              <p>Encontre respostas rápidas ou envie uma mensagem para a equipe MindSafe.</p>
+            </div>
+            <span class="support-badge" aria-hidden="true">?</span>
+          </div>
+          <div class="support-grid">
+            <div class="support-faq">
+              <h3>Perguntas frequentes</h3>
+              <details>
+                <summary>O MindSafe substitui um profissional?</summary>
+                <p>Não. O MindSafe oferece informação e reflexão, mas não faz diagnósticos nem substitui atendimento profissional.</p>
+              </details>
+              <details>
+                <summary>O que acontece com meus dados?</summary>
+                <p>Neste protótipo, seus dados ficam somente no armazenamento local deste navegador e não são enviados a um servidor.</p>
+              </details>
+              <details>
+                <summary>Preciso de ajuda agora. O que faço?</summary>
+                <p>Em uma emergência, ligue para o SAMU (192) ou vá a uma unidade de pronto atendimento. Para apoio emocional, o CVV atende pelo 188.</p>
+              </details>
+            </div>
+            <form class="support-form" id="support-form">
+              <h3>Fale com a gente</h3>
+              <div class="field">
+                <label for="support-topic">Assunto</label>
+                <select id="support-topic" required>
+                  <option value="">Selecione um assunto</option>
+                  <option value="conta">Conta e perfil</option>
+                  <option value="conteudo">Conteúdo da plataforma</option>
+                  <option value="sugestao">Sugestão</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="support-message">Mensagem</label>
+                <textarea id="support-message" rows="4" placeholder="Como podemos ajudar?" required></textarea>
+              </div>
+              <button class="primary-button" type="submit">Enviar mensagem <span>→</span></button>
+              <p class="support-form-message" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
       </div>
     </main>
     <script src="auth.js"></script>
