@@ -407,14 +407,132 @@ document
     ),
   );
 
+function getCurrentUser() {
+  return typeof MindSafeDB !== "undefined" ? MindSafeDB.getCurrentUser() : null;
+}
+
+function formatDate(dateValue) {
+  return new Intl.DateTimeFormat("pt-BR", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(new Date(dateValue));
+}
+
+function formatShortDate(dateValue) {
+  return new Intl.DateTimeFormat("pt-BR", {
+    day: "2-digit",
+    month: "short",
+  }).format(new Date(dateValue));
+}
+
+function renderUserData() {
+  const user = getCurrentUser();
+  if (!user) return;
+
+  const firstName = (user.name || "").trim().split(/\s+/)[0] || "você";
+  const welcome = document.querySelector("#welcome-title");
+  const miniName = document.querySelector(".user-mini strong");
+  const miniAvatar = document.querySelector(".user-mini .avatar");
+  const assistantGreeting = document.querySelector("#messages .assistant-message p");
+
+  if (welcome) welcome.innerHTML = `Bom te ver por aqui, ${firstName}<span class="soft-dot">!</span>`;
+  if (miniName) miniName.textContent = user.name || "Meu perfil";
+  if (miniAvatar) miniAvatar.textContent = getInitials(user.name);
+  if (assistantGreeting) assistantGreeting.textContent = `Olá, ${firstName}. Eu estou aqui para ajudar você a entender melhor temas de saúde mental.`;
+}
+
+function getInitials(name = "MS") {
+  return name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0].toUpperCase())
+    .join("") || "MS";
+}
+
+function renderHistory() {
+  const user = getCurrentUser();
+  if (!user || typeof MindSafeDB === "undefined") return;
+
+  const moods = MindSafeDB.getMoods(user.id);
+  const diary = MindSafeDB.getDiary(user.id);
+  const timeline = document.querySelector(".timeline");
+  const summaryCards = document.querySelectorAll(".summary-card strong");
+
+  if (summaryCards[0]) summaryCards[0].textContent = moods.length;
+  if (summaryCards[1]) summaryCards[1].textContent = diary.length;
+  if (summaryCards[2]) {
+    const dates = [...moods, ...diary].map((item) => new Date(item.createdAt).getTime());
+    const days = dates.length
+      ? Math.max(1, Math.ceil((Date.now() - Math.min(...dates)) / 86400000))
+      : 0;
+    summaryCards[2].textContent = days ? Math.min(days, 999) : 0;
+  }
+
+  if (!timeline) return;
+  const heading = timeline.querySelector(".section-heading");
+  const items = [
+    ...moods.map((item) => ({ type: "mood", title: item.mood, date: item.createdAt, text: "Check-in emocional", dot: "green-dot" })),
+    ...diary.map((item) => ({ type: "diary", title: item.text.slice(0, 55) + (item.text.length > 55 ? "…" : ""), date: item.createdAt, text: "Entrada no diário", dot: "blue-dot" })),
+  ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  timeline.querySelectorAll(".timeline-item").forEach((item) => item.remove());
+
+  if (!items.length) {
+    const empty = document.createElement("p");
+    empty.className = "timeline-empty";
+    empty.textContent = "Seus registros aparecerão aqui conforme você usar o MindSafe.";
+    timeline.appendChild(empty);
+    return;
+  }
+
+  items.slice(0, 12).forEach((item) => {
+    const row = document.createElement("div");
+    row.className = "timeline-item";
+    row.innerHTML = `<span class="timeline-dot ${item.dot}"></span><div><strong></strong><p></p></div><time></time>`;
+    row.querySelector("strong").textContent = item.title;
+    row.querySelector("p").textContent = item.text;
+    row.querySelector("time").textContent = formatDate(item.date);
+    timeline.appendChild(row);
+  });
+
+  if (heading) timeline.prepend(heading);
+
+  const recentPanel = document.querySelector(".recent-panel");
+  if (recentPanel) {
+    recentPanel.querySelectorAll(".record-row").forEach((row) => row.remove());
+    const recent = items.slice(0, 2);
+    recent.forEach((item) => {
+      const row = document.createElement("div");
+      row.className = "record-row";
+      row.innerHTML = `<span class="record-icon ${item.type === "mood" ? "yellow" : "blue"}">${item.type === "mood" ? "◡" : "☰"}</span><span><strong></strong><small></small></span><span class="record-arrow">→</span>`;
+      row.querySelector("strong").textContent = item.title;
+      row.querySelector("small").textContent = `${item.text} · ${formatShortDate(item.date)}`;
+      recentPanel.appendChild(row);
+    });
+  }
+}
+
 document.querySelectorAll("[data-mood]").forEach((button) =>
   button.addEventListener("click", () => {
     document
       .querySelectorAll("[data-mood]")
       .forEach((item) => item.classList.remove("selected"));
     button.classList.add("selected");
+
+    const user = getCurrentUser();
+    if (!user || typeof MindSafeDB === "undefined") {
+      showToast("Entre ou crie uma conta para salvar seu check-in.");
+      return;
+    }
+
+    MindSafeDB.addMood(user.id, button.dataset.mood);
     document.querySelector(".saved-mood").textContent =
       `Check-in salvo: ${button.dataset.mood}. Obrigado por se escutar.`;
+    renderHistory();
   }),
 );
 
@@ -424,9 +542,18 @@ document.querySelector("#save-diary").addEventListener("click", () => {
     showToast("Escreva algo antes de salvar seu registro.");
     return;
   }
+
+  const user = getCurrentUser();
+  if (!user || typeof MindSafeDB === "undefined") {
+    showToast("Entre ou crie uma conta para salvar seu diário.");
+    return;
+  }
+
+  MindSafeDB.addDiary(user.id, diaryText.value);
   document.querySelector("#diary-status").textContent =
     "Registro salvo com privacidade.";
   diaryText.value = "";
+  renderHistory();
 });
 document.querySelector("#use-prompt").addEventListener("click", () => {
   showView("diario");
@@ -455,3 +582,5 @@ document.querySelectorAll("[data-view]").forEach((button) => {
 
 renderArticles();
 renderGlossary();
+renderUserData();
+renderHistory();
