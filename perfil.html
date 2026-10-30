@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gerencie seus dados pessoais no MindSafe."
+    />
+    <title>Meu perfil | MindSafe</title>
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body class="profile-page">
+    <main class="auth-main">
+      <div class="profile-shell">
+        <header class="profile-top">
+          <a class="brand" href="home.html"
+            ><span class="brand-mark">M</span
+            ><span>mind<strong>safe</strong></span></a
+          ><a class="home-link" href="home.html">← Voltar ao início</a>
+        </header>
+        <section class="profile-intro">
+          <p class="eyebrow">SEU ESPAÇO PESSOAL</p>
+          <h1>Meu perfil</h1>
+          <p>
+            Atualize seus dados básicos para deixar sua experiência mais
+            confortável.
+          </p>
+        </section>
+        <section class="profile-card">
+          <div class="profile-identity">
+            <div class="profile-avatar" id="profile-avatar">MS</div>
+            <div>
+              <h2 id="profile-name-heading">Seu perfil</h2>
+              <p id="profile-email-heading">Adicione seu e-mail</p>
+            </div>
+          </div>
+          <form id="profile-form" novalidate>
+            <h2 class="profile-section-title">Dados pessoais</h2>
+            <div class="field-grid">
+              <div class="field full">
+                <label for="profile-name">Nome completo</label
+                ><input
+                  id="profile-name"
+                  type="text"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="profile-email">E-mail</label
+                ><input
+                  id="profile-email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="profile-phone">Telefone</label
+                ><input id="profile-phone" type="tel" autocomplete="tel" />
+              </div>
+              <div class="field">
+                <label for="profile-city">Cidade</label
+                ><input
+                  id="profile-city"
+                  type="text"
+                  autocomplete="address-level2"
+                />
+              </div>
+              <div class="field">
+                <label for="profile-contact">Forma de contato preferida</label
+                ><select id="profile-contact">
+                  <option value="email">E-mail</option>
+                  <option value="telefone">Telefone</option>
+                </select>
+              </div>
+            </div>
+            <div class="profile-actions">
+              <button class="secondary-button" id="logout-button" type="button">
+                Sair da conta</button
+              ><button class="primary-button" type="submit">
+                Salvar alterações <span>→</span>
+              </button>
+            </div>
+            <p class="form-message" aria-live="polite"></p>
+          </form>
+          <p class="privacy-note">
+            ⓘ Estes campos são apenas dados de identificação e contato. Neste
+            protótipo, as informações ficam salvas localmente no navegador e não
+            são enviadas para um servidor.
+          </p>
+        </section>
+        <section class="support-card" aria-labelledby="support-title">
+          <div class="support-heading">
+            <div>
+              <p class="eyebrow">ESTAMOS COM VOCÊ</p>
+              <h2 id="support-title">Ajuda e suporte</h2>
+              <p>Encontre respostas rápidas ou envie uma mensagem para a equipe MindSafe.</p>
+            </div>
+            <span class="support-badge" aria-hidden="true">?</span>
+          </div>
+          <div class="support-grid">
+            <div class="support-faq">
+              <h3>Perguntas frequentes</h3>
+              <details>
+                <summary>O MindSafe substitui um profissional?</summary>
+                <p>Não. O MindSafe oferece informação e reflexão, mas não faz diagnósticos nem substitui atendimento profissional.</p>
+              </details>
+              <details>
+                <summary>O que acontece com meus dados?</summary>
+                <p>Neste protótipo, seus dados ficam somente no armazenamento local deste navegador e não são enviados a um servidor.</p>
+              </details>
+              <details>
+                <summary>Preciso de ajuda agora. O que faço?</summary>
+                <p>Em uma emergência, ligue para o SAMU (192) ou vá a uma unidade de pronto atendimento. Para apoio emocional, o CVV atende pelo 188.</p>
+              </details>
+            </div>
+            <form class="support-form" id="support-form">
+              <h3>Fale com a gente</h3>
+              <div class="field">
+                <label for="support-topic">Assunto</label>
+                <select id="support-topic" required>
+                  <option value="">Selecione um assunto</option>
+                  <option value="conta">Conta e perfil</option>
+                  <option value="conteudo">Conteúdo da plataforma</option>
+                  <option value="sugestao">Sugestão</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="support-message">Mensagem</label>
+                <textarea id="support-message" rows="4" placeholder="Como podemos ajudar?" required></textarea>
+              </div>
+              <button class="primary-button" type="submit">Enviar mensagem <span>→</span></button>
+              <p class="support-form-message" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="auth.js"></script>
+  </body>
+</html>
